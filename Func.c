@@ -93,7 +93,7 @@ void print_lines(char * str){
                         break;
                     }
                     if(j == strlen(str)-1){
-                        printf("%s", line);
+                        printf("%s\n", line);
                     }
                 }
             }
@@ -109,7 +109,7 @@ void print_similar_words(char * str){
     while(sumWord(word) != 0){
         getWord(word);
         if(similar(word, str)){
-            printf("%s", word);
+            printf("%s\n", word);
         }
         strcpy(word, "");
     }
