@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+void shift_element(int* arr, int i);
+void insertion_sort(int* arr , int len);
+
+
 void shift_element(int* arr, int i){
 
     int tmp = *(arr + i);
@@ -29,7 +33,6 @@ void insertion_sort(int* arr , int len){
 }
 
 
-
 int main(){
     int arr[50];
     for(int i = 0; i < 50; i++){
@@ -41,5 +44,4 @@ int main(){
         if(i <49)
             printf(",");
     }
-
 }
