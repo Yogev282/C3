@@ -39,8 +39,9 @@ int main(){
     }
     insertion_sort(arr, 50);
     for(int i = 0; i < 50; i++){
-        printf("%d", arr[i]);
         if(i <49)
-            printf(",");
+            printf("%d,", arr[i]);
+        else
+            printf("%d\n", arr[i]);    
     }
 }
