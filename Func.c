@@ -3,7 +3,7 @@
 #include "Func.h"
 
 
-int getLine(char s[]){
+int sumLine(char s[]){
     int counter = 0;
     int i = 0;
     while((s[i] = getchar()) != '\n' && s[i] != EOF && s[i] != '\r'){
@@ -13,7 +13,7 @@ int getLine(char s[]){
     return counter;
 }
 
-int getword(char w[]){
+int sumWord(char w[]){
     int counter = 0;
     int i = 0;
     while(w[i] != ' ' && w[i] != '\t' && w[i] != '\n' && w[i] != EOF && w[i] != '\r'){
@@ -68,18 +68,49 @@ int similar (char *s, char *t){
     return 1;
 }
 
-void print_lines(char * str){
-    char line[LINE];
-    while(getLine(line) != 0){
-        if(substring(line, str))
-            printf("%s", line);
+void getLine(char line[]){
+    int i = 0;
+    while((line[i] = getchar()) != '\n' && line[i] != EOF && line[i] != '\r'){
+        i++;
     }
 }
 
+void getWord(char word[]){
+    int i = 0;
+    while((word[i] = getchar()) != ' ' && word[i] != '\t' && word[i] != '\n' && word[i] != EOF && word[i] != '\r'){
+        i++;
+    }
+}
+
+void print_lines(char * str){
+    char line[LINE];
+    while(sumLine(line) != 0){
+        getLine(line);
+        for(int i = 0; i < strlen(line); i++){
+            if(line[i] == str[0]){
+                for(int j = 0; j < strlen(str); j++){
+                    if(line[i+j] != str[j]){
+                        break;
+                    }
+                    if(j == strlen(str)-1){
+                        printf("%s", line);
+                    }
+                }
+            }
+                
+        }
+        strcpy(line, "");
+    }
+}
+
+
 void print_similar_words(char * str){
     char word[WORD];
-    while(getword(word) != 0){
-        if(similar(word, str))
+    while(sumWord(word) != 0){
+        getWord(word);
+        if(similar(word, str)){
             printf("%s", word);
+        }
+        strcpy(word, "");
     }
 }

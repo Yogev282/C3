@@ -4,9 +4,10 @@
 #include "Func.c"
 
 int main(){
-    char tmp;
+    char tmp='a';
     char str[WORD];
     char option;
+
     while(tmp != ' '){
         scanf("%c", &tmp);
         if(tmp != ' '){
@@ -14,6 +15,8 @@ int main(){
         }
     }
     
+    scanf("%c", &option);
+
     while(option != 'a' && option != 'b'){
         scanf("%c", &option);
     }
