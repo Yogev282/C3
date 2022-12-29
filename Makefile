@@ -17,6 +17,10 @@ txtfind.o: txtfind.c Func.c Func.h
 	
 clean:
 	rm -f *.o *.a *.so isort txtfind
+
+leakTest: clean all
+	valgrind --leak-check=full ./isort
+	valgrind --leak-check=full ./txtfind
 	
 
 

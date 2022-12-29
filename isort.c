@@ -31,9 +31,15 @@ void insertion_sort(int* arr , int len){
 
 
 int main(){
-    int arr[15] = {5,6,2,8,2,1,5,6,8,4,47,24,3,12,19};
-    int* k = arr;
-    insertion_sort(k,15);
-    for(int loop = 0; loop < 15; loop++)
-        printf("%d ", arr[loop]);
+    int arr[50];
+    for(int i = 0; i < 50; i++){
+        scanf("%d", &arr[i]);
+    }
+    insertion_sort(arr, 50);
+    for(int i = 0; i < 50; i++){
+        printf("%d", arr[i]);
+        if(i <49)
+            printf(",");
+    }
+
 }
