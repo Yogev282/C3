@@ -32,7 +32,6 @@ void insertion_sort(int* arr , int len){
     }
 }
 
-
 int main(){
     int arr[50];
     for(int i = 0; i < 50; i++){
