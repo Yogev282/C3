@@ -2,29 +2,24 @@
 #include <string.h>
 #include "Func.h"
 #include "Func.c"
-
 int main(){
-    char tmp='a';
+    
     char str[WORD];
     char option;
 
-    while(tmp != ' '){
-        scanf("%c", &tmp);
-        if(tmp != ' '){
-            strncat(str, &tmp, 1);
-        }
-    }
+    getWord(str);
     
-    scanf("%c", &option);
-
-    while(option != 'a' && option != 'b'){
-        scanf("%c", &option);
-    }
+    option = getchar();
+    getchar();
+    getchar();
 
     if(option == 'a'){
         print_lines(str);
     }
-    else{
+    else if(option == 'b'){
         print_similar_words(str);
+    }
+    else{
+        printf("Invalid input\n");
     }
 }
